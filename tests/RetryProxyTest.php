@@ -60,6 +60,20 @@ class RetryProxyTest extends TestCase
         $this->assertEquals(3, $action->attempts);
     }
 
+    public function testErrorExceptions(): void
+    {
+        $action = new MockRetryClass(3);
+        $proxy = new RetryProxy(new SimpleRetryPolicy());
+        try {
+            $proxy->call(array($action, 'action'));
+        } catch (\Throwable $e) {
+            $this->assertEquals(1, $action->attempts);
+        }
+        $action->exceptionToThrow = new \ErrorException();
+        $proxy->call(array($action, 'action'));
+        $this->assertEquals(4, $action->attempts);
+    }
+
     public function testBackOffInvoked(): void
     {
         for ($x = 1; $x <= 10; $x++) {
