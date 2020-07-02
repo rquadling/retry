@@ -91,7 +91,7 @@ class CallableRetryPolicy extends AbstractRetryPolicy
     /**
      * Setter for retry attempts.
      *
-     * @param int $maxAttempts the number of attempts before a retry becomes impossible
+     * @param int $maxAttempts The number of attempts before a retry becomes impossible.
      *
      * @return void
      */

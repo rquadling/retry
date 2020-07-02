@@ -164,7 +164,7 @@ class ExponentialBackOffPolicy extends AbstractBackOffPolicy
     /**
      * The maximum interval to sleep for. Defaults to 30 seconds.
      *
-     * @return int the maximum interval
+     * @return int The maximum interval.
      */
     public function getMaxInterval(): int
     {

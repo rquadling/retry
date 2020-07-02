@@ -60,7 +60,7 @@ class SimpleRetryPolicy extends AbstractRetryPolicy
     private $retryableExceptions = ['Exception', 'ErrorExceptions'];
 
     /**
-     * @param int|null $maxAttempts the number of attempts before a retry becomes impossible
+     * @param int|null $maxAttempts The number of attempts before a retry becomes impossible.
      */
     public function __construct(int $maxAttempts = null, array $retryableExceptions = null)
     {
@@ -88,7 +88,7 @@ class SimpleRetryPolicy extends AbstractRetryPolicy
     /**
      * Setter for retry attempts.
      *
-     * @param int $maxAttempts the number of attempts before a retry becomes impossible
+     * @param int $maxAttempts The number of attempts before a retry becomes impossible.
      *
      * @return void
      */

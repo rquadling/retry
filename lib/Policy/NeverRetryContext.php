@@ -36,15 +36,6 @@ class NeverRetryContext extends RetryContext
     /** @var bool */
     private $finished = false;
 
-    public static function cast(RetryContextInterface $context): NeverRetryContext
-    {
-        if (!$context instanceof NeverRetryContext) {
-            throw new InvalidArgumentException('Context is expected to be an instanceof NeverRetryContext.');
-        }
-
-        return $context;
-    }
-
     public function isFinished(): bool
     {
         return $this->finished;
@@ -53,5 +44,14 @@ class NeverRetryContext extends RetryContext
     public function setFinished()
     {
         $this->finished = true;
+    }
+
+    public static function cast(RetryContextInterface $context): NeverRetryContext
+    {
+        if (!$context instanceof NeverRetryContext) {
+            throw new InvalidArgumentException('Context is expected to be an instanceof NeverRetryContext.');
+        }
+
+        return $context;
     }
 }

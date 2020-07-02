@@ -46,6 +46,11 @@ class TimeoutRetryContext extends RetryContext
         $this->start = microtime(true);
     }
 
+    public function isAlive(): bool
+    {
+        return (microtime(true) - $this->start) * 1000 <= $this->timeout;
+    }
+
     public static function cast(RetryContextInterface $context): TimeoutRetryContext
     {
         if (!$context instanceof TimeoutRetryContext) {
@@ -53,10 +58,5 @@ class TimeoutRetryContext extends RetryContext
         }
 
         return $context;
-    }
-
-    public function isAlive(): bool
-    {
-        return (microtime(true) - $this->start) * 1000 <= $this->timeout;
     }
 }

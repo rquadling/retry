@@ -53,7 +53,7 @@ class FixedBackOffPolicy extends StatelessBackOffPolicy
     private $sleeper;
 
     /**
-     * @param int|null $backOffPeriod The back-off period in milliseconds. Cannot be &lt; 1. Default value is 1000 ms.
+     * @param int|null $backOffPeriod The back-off period in milliseconds. Cannot be > 1. Default value is 1000 ms.
      */
     public function __construct(int $backOffPeriod = null)
     {

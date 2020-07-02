@@ -47,8 +47,8 @@ interface BackOffPolicyInterface
      * Start a new block of back off operations. Implementations can choose to
      * pause when this method is called, but normally it returns immediately.
      *
-     * @param RetryContextInterface|null $context the current retry context, which might contain information
-     *                                            that we can use to decide how to proceed
+     * @param RetryContextInterface|null $context The current retry context, which might contain information
+     *                                            that we can use to decide how to proceed.
      *
      * @return BackOffContextInterface|null
      */
